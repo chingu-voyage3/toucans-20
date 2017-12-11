@@ -9,28 +9,134 @@
   <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
-<h1>test</h1>
-<!-- 1_ Nav+Header start -->
-<!-- 1_ Nav+Header end -->
+  <h1>test</h1>
+  <!-- 1_ Nav+Header start -->
+  <!-- 1_ Nav+Header end -->
 
-<!-- 2_title+CTA start -->
-<!-- 2_title+CTA end -->
+  <!-- 2_title+CTA start -->
+  <!-- 2_title+CTA end -->
 
-<!-- 3_Features start -->
-<!-- 3_Features end -->
+  <!-- 3_Features start -->
+  <div class="features">
+    <h2>Simple, powerful, open source automation API</h2>
+    <p class="subtitle">Automate your development process, increase visibility.</p>
+    <div class="buttons-container">
+      <div class="button selected" id="create-button">CREATE PROJECT</div>
+      <div class="button"id="update-button">UPDATE DEPENDENCIES</div>
+      <div class="button"id="bot-button">BOT COMMAND</div>
+    </div>
+    <div class="tab" id="create-text">
+      <pre>
+        <code>
+@CommandHandler(<span class="code-light-green">"Kotlin Spring 5 generator"</span>, <span class="code-light-green">"Generate a new spring Kotlin project"</span>)
+<span class="code-green">export class</span> <span class="code-yellow">KotlinSpring5</span> <span class="code-green">extends</span> <span class="code-yellow">JavaSeed</span> {
 
-<!-- 4_Carousel start -->
-<!-- 4_Carousel end -->
+  public projectEditor(ctx: HandlerContext, params:<span class="code-green"> this</span>): ProjectEditor {
+    <span class="code-green">return</span> transformSeed;
+  }
 
-<!-- 5_tab_demo start -->
-<!-- 5_tab_demo end -->
+}
 
-<!-- 6_footer start -->
-<!-- 6_footer end -->
+<span class="code-green">const</span> transformSeed: ProjectEditor = <span class="purple">project: Project, ctx: HandlerContext, pars: KotlinSpring5</span>) => {
+  <span class="code-green">const</span> artifact = camelize(pars.artifactId);
+  <span class="code-green">const</span> appName = artifact.charAt(<span class="blue">0</span>).toUpperCase() + artifact.substr(<span class="blue">1</span>);
+  <span class="code-green">const</span> smartArtifactId = (pars.artifactId === <span class="code-light-green">"${projectName}"</span>) ? project.name : pars.artifactId;
+  <span class="code-green">return</span> updatePom(project, smartArtifactId, pars.groupId, pars.version, pars.description)
+  .then(inferFromKotlinSource)
+  .then(<span class="purple">structure</span> => !!structure ?
+  renameAppClass(project, structure, appName)
+  .then(<span class="purple">p</span> => movePackage(p, structure.applicationPackage, pars.rootPackage, AllKotlinFiles))
+  : project);
+};
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/main.js" >
+<span class="code-green">function</span> <span class="code-yellow">renameAppClass</span>(<span class="purple">project: Project, structure: SpringBootProjectStructure,
+appName: string</span>): <span class="code-yellow">Promise</span> {
+  <span class="code-green">return</span> doWithFiles(project, AllKotlinFiles, <span class="purple">f</span> =>
+  f.replaceAll(structure.applicationClassStem, appName)
+  .then(f => f.path.includes(structure.applicationClassStem) ?
+  f.setPath(f.path.replace(structure.applicationClassStem, appName)) :
+  f
+  )
+  )
+}
+        </code>
+      </pre>
+    </div>
+    <div class="tab hide" id="update-text">
+      <pre>
+        <code>
+<span class="code-green">@CommandHandler</span>(<span class="code-light-green">"Upgrade versions of Spring Boot across an org"</span>, <span class="code-light-green">"upgrade spring boot version"</span>)
+export <span class="code-green">class</span> <span class="code-yellow">SpringBootVersionUpgrade</span> <span class="code-green">extends</span> <span class="code-yellow">EditorCommandSupport</span> {
 
-</script>
+    <span class="code-green">@Secret</span>(Secrets.userToken([<span class="code-light-green">"repo"</span>, <span class="code-light-green">"user"</span>]))
+    <span class="code-green">protected</span> githubToken;
+
+    <span class="code-green">@Parameter</span>({
+        displayName: <span class="code-light-green">"Desired Spring Boot version"</span>,
+        description: <span class="code-light-green">"The desired Spring Boot version across these repos"</span>,
+        pattern: /^.+$/,
+        validInput: <span class="code-light-green">"Semantic version"</span>,
+        required: <span class="code-green">false</span>,
+    })
+    <span class="code-green">public</span> desiredBootVersion: string;
+
+    <span class="code-green">public</span> <span class="code-yellow">projectEditor</span><span class="purple">()</span>: ProjectEditor {
+        <span class="code-green">return</span> setSpringBootVersionEditor(<span class="code-green">this</span>.desiredBootVersion);
+    }
+
+    <span class="code-green">public</span> <span class="code-yellow">editInfo</span><span class="purple">(p: Project)</span>: EditMode {
+        <span class="code-green">return new</span> PullRequest(<span class="code-light-green">"spring-boot-"</span> + <span class="code-green">this</span>.desiredBootVersion,
+            <span class="code-light-green">"Upgrade Spring Boot to "</span> + <span class="code-green">this</span>.desiredBootVersion);
+    }
+}
+
+export function <span class="code-yellow">setSpringBootVersionEditor</span><span class="purple">(desiredBootVersion: string)</span>: AnyProjectEditor {
+    <span class="code-green">return</span> p =>
+        doWithAtMostOneMatch(p, <span class="code-light-green">"pom.xml"</span>,
+            parentStanzaOfGrammar(SpringBootStarter), m => {
+                <span class="code-green">if</span> (m.version.value !== desiredBootVersion) {
+                    m.version.value = desiredBootVersion;
+                }
+            });
+}
+        </code>
+      </pre>
+    </div>
+    <div class="tab hide" id="bot-text">
+      <pre>
+        <code>
+@CommandHandler(<span class="code-light-green">"Query Stack Overflow"</span>, <span class="code-light-green">"search so"</span>)
+@Tags(<span class="code-light-green">"stack-overflow"</span>)
+<span class="code-green">export class</span> <span class="code-yellow">SearchStackOverflow implements HandleCommand</span> {
+
+    @Parameter({ description: <span class="code-light-green">"your search query"</span>, pattern: <span class="blue">/^.*$/</span> })
+    public q: string;
+
+    public handle(ctx: HandlerContext): <span class="code-light-green">Promise</span> {
+        <span class="code-green">return</span> axios.get(<span class="code-light-green">`${apiSearchUrl}${encodeURIComponent(</span><span class="code-green">this</span>.q)}`)
+            .then(res => <span class="code-green">this</span>.handleResult(<span class="purple">res</span>, <span class="code-green">this</span>.q))
+            .then(<span class="purple">msg</span> => <span class="code-green">return</span> ctx.messageClient.respond(msg) });
+    }
+}
+
+        </code>
+      </pre>
+    </div>
+  </div>
+  <!-- 3_Features end -->
+
+  <!-- 4_Carousel start -->
+  <!-- 4_Carousel end -->
+
+  <!-- 5_tab_demo start -->
+  <!-- 5_tab_demo end -->
+
+  <!-- 6_footer start -->
+  <!-- 6_footer end -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/main.js" >
+
+  </script>
 </body>
 </html>
