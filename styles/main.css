@@ -19,6 +19,13 @@ h1, h2 {
     background-color: #172330;
 }
 
+@media (min-width: 768px) {
+    .feature-column-container {
+        display: flex;
+    }
+}
+
+
 .feature-description {
     color: #f6f6f6;
     font-size: 1.125rem;
