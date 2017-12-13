@@ -17,6 +17,11 @@ h1, h2 {
 /* Slice 3 - Features: BEGIN */
 #features {
     background-color: #172330;
+    text-align: center;
+}
+
+#features img {
+    height: 90px;
 }
 
 @media (min-width: 768px) {
@@ -34,6 +39,7 @@ h1, h2 {
 #features ul {
     color: #5bc399;
     font-size: 15px;
+    text-align: left;
 }
 
 #features h2 {
