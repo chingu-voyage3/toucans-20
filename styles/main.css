@@ -52,6 +52,8 @@ h1, h2 {
     font-size: 15px;
     font-weight: 300;
     text-align: left;
+    padding: 0 30px 0 40px;
+    letter-spacing: 0.25px;
 }
 
 #features ul li {
