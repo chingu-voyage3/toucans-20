@@ -19,6 +19,9 @@ h1, h2 {
 #features {
     background-color: #172330;
     text-align: center;
+    width: 95%;
+    max-width: 1170px;
+    margin: 0 auto;
 }
 
 #features img {
@@ -28,9 +31,14 @@ h1, h2 {
 @media (min-width: 768px) {
     .feature-column-container {
         display: flex;
+        margin: 0 -15px;
     }
 }
 
+.feature-column {
+    padding: 0 15px;
+    flex: 1;
+}
 
 .feature-description {
     color: #f6f6f6;
