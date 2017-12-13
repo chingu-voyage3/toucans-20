@@ -1,6 +1,10 @@
 /*
 I added bootstrap for the browser reset features. (remove margins padding etc). It doesnt have to stay so if you guys see that it hinders you, it can come out. 
 */
+html {
+    font-size: 16px;
+}
+
 body {
     font-family: "Open Sans", "Helvetica", sans-serif;
 }
@@ -17,10 +21,16 @@ h1, h2 {
 
 .feature-description {
     color: #f6f6f6;
+    font-size: 1.125rem;
 }
 
 #features ul {
     color: #5bc399;
+    font-size: 15px;
+}
+
+#features h2 {
+    font-size: 1.5rem;
 }
 
 #features span {
