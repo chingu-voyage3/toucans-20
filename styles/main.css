@@ -58,6 +58,8 @@ h1, h2 {
     font-size: 1.125rem;
     font-weight: 300;
     line-height: 1.7;
+    height: 92px;
+    margin-bottom: 40px;
 }
 
 #features ul {
@@ -71,6 +73,7 @@ h1, h2 {
 
 #features ul li {
     line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 #features h2 {
