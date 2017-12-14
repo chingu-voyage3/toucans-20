@@ -83,4 +83,14 @@ h1, h2 {
 #features span {
     color: #aaaebd
 }
+
+#cta-button button{
+    padding: 15px 40px;
+    background-color: #5bc399;
+    border-color: transparent;
+    border-radius: 5px;
+    color: white;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 1.75px;
+}
 /* Slice 3 - Features: END */
