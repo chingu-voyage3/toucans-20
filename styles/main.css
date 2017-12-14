@@ -78,6 +78,8 @@ h1, h2 {
 
 #features h2 {
     font-size: 1.5rem;
+    margin-bottom: 60px;
+    margin-top: 25px;
 }
 
 #features span {
