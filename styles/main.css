@@ -1,18 +1,20 @@
 /*
 I added bootstrap for the browser reset features. (remove margins padding etc). It doesnt have to stay so if you guys see that it hinders you, it can come out.
 */
-
 html {
-   font-size: 16px;
+    font-size: 16px;
 }
-
 
 body {
-   font-family: "Open Sans", "Helvetica", sans-serif;
-   line-height: 1.5;
-   background-color: #1b2937;
+    font-family: "Open Sans", "Helvetica", sans-serif;
+    line-height: 1.5;
+    background-color: #1b2937;
 }
 
+h1, h2 {
+    color: white;
+    font-family: "Lato", sans-serif;
+}
 
 h1, h2 {
    color: #fff;
@@ -20,7 +22,7 @@ h1, h2 {
 
 }
 
-h2 {
+.tabs h2 {
   text-transform: uppercase;
   text-align: center;
   font-size: 21px;
@@ -28,6 +30,7 @@ h2 {
   font-weight: bolder;
   letter-spacing: 4px;
 }
+
 .subtitle {
   color: #aaaebd;
   font-size: 1rem;
@@ -106,20 +109,6 @@ pre, code {
 }
 /* STYLES for the 3TAB features section - END
 */
-html {
-    font-size: 16px;
-}
-
-body {
-    font-family: "Open Sans", "Helvetica", sans-serif;
-    line-height: 1.5;
-    background-color: #1B2937;
-}
-
-h1, h2 {
-    color: white;
-    font-family: "Lato", sans-serif;
-}
 
 /* Slice 3 - Features: BEGIN */
 #features {
