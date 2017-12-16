@@ -1,3 +1,100 @@
 /*
 I added bootstrap for the browser reset features. (remove margins padding etc). It doesnt have to stay so if you guys see that it hinders you, it can come out. 
 */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans", "Helvetica", sans-serif;
+    line-height: 1.5;
+    background-color: #1B2937;
+}
+
+h1, h2 {
+    color: white;
+    font-family: "Lato", sans-serif;
+}
+
+/* Slice 3 - Features: BEGIN */
+#features {
+    background-color: #172330;
+    text-align: center;
+}
+
+#features #row {
+    width: 95%;
+    margin: 0 auto;
+}
+
+#features img#create {
+    height: 90px;
+    margin-top: 20px;
+}
+
+#features img#ship {
+    height: 110px;
+}
+
+#features img#improve {
+    height: 80px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+@media (min-width: 768px) {
+    .feature-column-container {
+        display: flex;
+        margin: 0 -15px;
+    }
+}
+
+.feature-column {
+    padding: 0 15px;
+    flex: 1;
+}
+
+.feature-description {
+    color: #f6f6f6;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.7;
+    height: 92px;
+    margin-bottom: 40px;
+}
+
+#features ul {
+    color: #5bc399;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: left;
+    padding: 0 30px 0 40px;
+    letter-spacing: 0.25px;
+}
+
+#features ul li {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+#features h2 {
+    font-size: 1.5rem;
+    margin-bottom: 60px;
+    margin-top: 25px;
+}
+
+#features span {
+    color: #aaaebd
+}
+
+#cta-button button{
+    padding: 15px 40px;
+    background-color: #5bc399;
+    border-color: transparent;
+    border-radius: 5px;
+    color: white;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 1.75px;
+}
+/* Slice 3 - Features: END */
