@@ -2,14 +2,25 @@
 I added bootstrap for the browser reset features. (remove margins padding etc). It doesnt have to stay so if you guys see that it hinders you, it can come out.
 */
 
+html {
+   font-size: 16px;
+}
+
+
 body {
-  background-color: #1b2937;
-  font-family: 'Open Sans', sans-serif;
-  color:#fff;
+   font-family: "Open Sans", "Helvetica", sans-serif;
+   line-height: 1.5;
+   background-color: #1b2937;
+}
+
+
+h1, h2 {
+   color: #fff;
+   font-family: "Lato", sans-serif;
+
 }
 
 h2 {
-  font-family: 'Lato', sans-serif;
   text-transform: uppercase;
   text-align: center;
   font-size: 21px;
@@ -19,7 +30,7 @@ h2 {
 }
 .subtitle {
   color: #aaaebd;
-  font-size: 16px;
+  font-size: 1rem;
   text-align: center;
   margin: 20px auto 40px;
 

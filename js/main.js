@@ -4,7 +4,7 @@ $( document ).ready(function() {
 
 
 
-// 3_features script start
+// 5_tabs script start
 // add a click event listener on all divs with the class button
 $('.button').on('click', function(){
   // deselect all button
@@ -18,6 +18,6 @@ $('.button').on('click', function(){
   //remove class from the clicked tab
   $(tabText).removeClass('hide');
 });
-//3_features script end
+//5_tabs script end
 
 });
