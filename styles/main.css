@@ -117,8 +117,14 @@ pre, code {
 }
 
 #features #row {
-    width: 95%;
+    max-width: 1170px;
     margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+    #features #row {
+	max-width: 95%;
+    }
 }
 
 #features img#create {
