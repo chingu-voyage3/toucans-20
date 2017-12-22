@@ -1,6 +1,7 @@
 /*
 I added bootstrap for the browser reset features. (remove margins padding etc). It doesnt have to stay so if you guys see that it hinders you, it can come out.
 */
+
 html {
     font-size: 16px;
 }
@@ -12,17 +13,140 @@ body {
 }
 
 h1, h2 {
-    color: white;
-    font-family: "Lato", sans-serif;
-}
-
-h1, h2 {
    color: #fff;
    font-family: "Lato", sans-serif;
 
 }
 
-.tabs h2 {
+section, footer, div {
+    display: block;
+}
+
+/* Slice 6 - footer styles - BEGIN */
+
+#footer-links {
+    background-color: #227F7E;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    width: 100%;
+}
+
+#footer-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width 100%;
+}
+
+#footer-links ul li {
+    margin: 0;
+    width: auto;
+    display: inline-block;
+}
+
+#footer-links ul li a {
+    color: white;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 550;
+    letter-spacing: 2px;
+    line-height: 30px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#footer-email {
+    padding: 50px 0 100px 0;
+    background-color: #1B2937;
+    color: white;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+#footer-email h3 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+    margin: 0 0 30px 0;
+}
+
+#footer-email #email #email-box {
+    width: 300px;
+    background-color: #1B2937;
+    border-color: #5f7182;
+    color: #F6F6F6;
+    display: inline-block;
+    height: 60px;
+    border: 1px solid #737f8c;
+    padding: 6px 10px 6px 10px;
+    line-height: 1.15;
+    margin-bottom: 0;
+}
+
+#footer-email #email #email-btn {
+    background-color: #227F7E;
+    border: none;
+    border-radius: 0;
+    color: white;
+    display: inline-block;
+    height: 60px;
+    text-align: center;
+    line-height: 1;
+    padding: 10px 30px;
+    margin-top: -1px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    transition: all 0.2s linear;
+}
+
+#footer-email #email #email-btn:hover {
+    background-color: #315f68;
+}
+
+#footer-copyright {
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-align: center;
+    padding: 50px 0 100px 0;
+}
+
+#footer-copyright .made-with-love {
+    padding: 0 0 20px 0;
+}
+
+#footer-copyright .copyright {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 0 60px 0;
+}
+
+#footer-copyright .twitter img {
+    margin: 0 0 10px 0;
+    width: 22px;
+}
+
+.twitter {
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* Slice 6 - footer styles - END */
+
+/* Slice 5 - 3TAB features section - BEGIN*/
+
+#tabs {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px 0 50px;
+}
+
+#tabs h2 {
   text-transform: uppercase;
   text-align: center;
   font-size: 21px;
@@ -31,25 +155,26 @@ h1, h2 {
   letter-spacing: 4px;
 }
 
-.subtitle {
+#tabs .subtitle {
   color: #aaaebd;
   font-size: 1rem;
   text-align: center;
   margin: 20px auto 40px;
-
-
-/* STYLES for the 3TAB features section - BEGIN
-*/
-
 }
-.buttons-container {
+
+/* 3 button classes - BEGIN*/
+.selected {
+  background-color: #121822;
+  color: #fff;
+}
+
+.tabs-buttons-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
 }
 
-.button {
+.tabs-button {
   box-sizing: border-box;
   display: inline-block;
   font-family: 'Lato', sans-serif;
@@ -63,19 +188,19 @@ h1, h2 {
   cursor: pointer;
   letter-spacing: 1.5px;
 }
-
-#tabs {
-  width: 90%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
+/* 3 button classes - END*/
 
 .tab {
   background-color: #121822;
   padding: 50px 30px;
 }
-/*Code styles*/
+.hide {
+  display: none;
+}
+
+/*Code styles - BEGIN*/
 pre, code {
+  white-space: pre;
   background-color: inherit;
   color: #bababa;
   border: none;
@@ -99,16 +224,10 @@ pre, code {
 .code-blue {
   color: #6896ba;
 }
-/*END: code styles*/
-.selected {
-  background-color: #121822;
-  color: #fff;
-}
-.hide {
-  display: none;
-}
-/* STYLES for the 3TAB features section - END
-*/
+/*code styles - END*/
+
+/* Slice 5 - 3TAB features section - END*/
+
 
 /* Slice 3 - Features: BEGIN */
 #features {
@@ -141,7 +260,6 @@ pre, code {
     margin-top: 10px;
     margin-bottom: 20px;
 }
-
 
 @media (min-width: 768px) {
     .feature-column-container {
