@@ -41,7 +41,7 @@
           Take the friction out of your shipping. Automate tedious tasks, get the right notifications to the right people.
 	</div>
 	<ul>
-          <li><span>Automate custom project checks and reviews</li></span>
+          <li><span>Automate custom project checks and reviews</span></li>
           <li><span>Streamline code review. Never wait for merges on all green again</span></li>
           <li><span>Compose and evolve flexible development flows based on events, not static pipeline definitions</span></li>
           <li><span>Release with the convenience of a button in Slack</span></li>
@@ -83,13 +83,11 @@
       <pre>
         <code>
 @CommandHandler(<span class="code-light-green">"Kotlin Spring 5 generator"</span>, <span class="code-light-green">"Generate a new spring Kotlin project"</span>)
-<span class="code-green">export class</span> <span class="code-yellow">KotlinSpring5</span> <span class="code-green">extends</span> <span class="code-yellow">JavaSeed</span> {
+<span class="code-green">export class</span> <span class="code-yellow">KotlinSpring5</span> <span class="code-green">extends</span> <span class="code-yellow">JavaSeed</span>
 
   public projectEditor(ctx: HandlerContext, params:<span class="code-green"> this</span>): ProjectEditor {
     <span class="code-green">return</span> transformSeed;
   }
-
-}
 
 <span class="code-green">const</span> transformSeed: ProjectEditor = <span class="purple">project: Project, ctx: HandlerContext, pars: KotlinSpring5</span>) => {
   <span class="code-green">const</span> artifact = camelize(pars.artifactId);
@@ -180,11 +178,37 @@ export function <span class="code-yellow">setSpringBootVersionEditor</span><span
   <!-- 5_tab_demo end -->
 
   <!-- 6_footer start -->
+  <section id="footer-links">    
+    <ul>
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">TERMS</a></li>
+        <li><a href="#">PRIVACY</a></li>
+        <li><a href="#">THE COMPOSITION</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+</section>
+  <section id="footer-email">
+    <h3>STAY IN THE KNOW. SIGN UP NOW!</h3>
+    <forme id="email">
+        <input type="email" value="" placeholder="email address" id="email-box" name="usremail">
+        <input type="submit" value="SUBSCRIBE" id="email-btn" class="button" name="subscribe">
+    </forme>
+</section>
+  <footer id="footer-copyright">
+    <div class="made-with-love">
+        <p>CREATED WITH <img src="https://atomist.com/img/heart.png"> BY ATOMIST IN SAN FRANCISCO & BEYOND</p>
+    </div>
+    <div class="copyright">
+        <p>COPYRIGHT © 2017 ATOMIST</p>
+    </div>
+    <div class="twitter">
+        <a href="#"><img src="https://atomist.com/img/twitter.png"></a>
+        <p>Follow us on Twitter</p>
+    </div>
+</footer>
   <!-- 6_footer end -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/main.js" >
-
-  </script>
+  <script type="text/javascript" src="js/main.js" ></script>
 </body>
 </html>
