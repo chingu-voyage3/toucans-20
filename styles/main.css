@@ -9,18 +9,55 @@ html {
 body {
     font-family: "Open Sans", "Helvetica", sans-serif;
     line-height: 1.5;
+    background: url("../images/atomist-starry-night.jpg") no-repeat center top;
     background-color: #1b2937;
 }
 
 h1, h2 {
    color: #fff;
    font-family: "Lato", sans-serif;
-
 }
 
 section, footer, div {
     display: block;
 }
+
+
+/* slice 2 - Title and CTA styles - BEGIN */
+
+#cta {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  height:60vh;
+}
+
+#cta div {
+  width: 100%;
+}
+
+#cta h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+h1+span {
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: #fff;
+}
+
+#cta .cta-button {
+    margin-top: 50px;
+}
+
+
+/* slice 2 - Title and CTA styles - END */
+
+
+
 
 /* Slice 6 - footer styles - BEGIN */
 
@@ -306,7 +343,7 @@ pre, code {
     color: #aaaebd
 }
 
-#cta-button button{
+.cta-button button{
     padding: 15px 40px;
     background-color: #5bc399;
     border-color: transparent;
