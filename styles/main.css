@@ -73,6 +73,7 @@ h2 {
 }
 /*Code styles*/
 pre, code {
+  white-space: pre;
   background-color: inherit;
   color: #bababa;
   border: none;
