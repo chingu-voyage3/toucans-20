@@ -6,9 +6,9 @@ $( document ).ready(function() {
 
 // 5_tabs script start
 // add a click event listener on all divs with the class button
-$('.button').on('click', function(){
+$('.tabs-button').on('click', function(){
   // deselect all button
-  $('.button').removeClass('selected');
+  $('.tabs-button').removeClass('selected');
   //select only to the clicked button
   $(this).addClass('selected');
   //hide all text tabs
