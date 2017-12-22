@@ -154,13 +154,13 @@ h1, h2 {
 
 }
 
-.buttons-container {
+.tabs-buttons-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.button {
+.tabs-button {
   box-sizing: border-box;
   display: inline-block;
   font-family: 'Lato', sans-serif;
