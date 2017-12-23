@@ -27,6 +27,18 @@ nav #logo img {
     margin-top: 31px;
     margin-left: 40px;
 }
+
+nav ul {
+    display: inline-block;
+}
+
+#button-holder {
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline-block;
+}
 /* Slice 1 - navbar - END */
 
 /* Slice 6 - footer styles - BEGIN */
