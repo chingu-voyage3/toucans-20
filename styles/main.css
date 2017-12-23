@@ -22,6 +22,13 @@ section, footer, div {
     display: block;
 }
 
+/* Slice 1 - navbar - BEGIN */
+nav #logo img {
+    margin-top: 31px;
+    margin-left: 40px;
+}
+/* Slice 1 - navbar - END */
+
 /* Slice 6 - footer styles - BEGIN */
 
 #footer-links {
