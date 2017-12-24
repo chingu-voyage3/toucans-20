@@ -38,6 +38,16 @@ nav ul {
     padding-left: 250px;
 }
 
+@media (min-width: 1400px) {
+    nav {
+	text-align: center;
+    }
+
+    nav ul {
+	padding-left: 0;
+    }
+}
+
 nav ul a {
     transition: all 0.2s linear;
     color: white;
