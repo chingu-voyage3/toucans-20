@@ -72,6 +72,24 @@ nav ul li {
 nav ul li {
     display: inline-block;
 }
+
+#cta-button-outline {
+    color: #5bc399;
+    font-size: 0.75rem;
+    height: 40px;
+    line-height: 36px;
+    padding: 0 20px;
+    background-color: transparent;
+    border: 2px solid #5bc399;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1.75px;
+}
+
+#cta-button-outline:hover {
+	background-color: #5bc399;
+	color: white;
+}
 /* Slice 1 - navbar - END */
 
 /* Slice 6 - footer styles - BEGIN */
