@@ -54,6 +54,9 @@ nav ul li {
 
 #button-holder {
     display: inline-block;
+    position: absolute;
+    right: 40px;
+    top: 35px;
 }
 
 nav ul li {
