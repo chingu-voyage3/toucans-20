@@ -16,6 +16,7 @@ section, footer, div {
     display: block;
 }
 
+
 #footer-links {
     background-color: #227F7E;
     text-align: center;
@@ -49,6 +50,14 @@ section, footer, div {
     text-decoration: none;
 }
 
+@media (max-width: 550px) {
+    #footer-links ul li{
+        display: block;
+        padding: 10px;
+    }
+}
+
+
 #footer-email {
     padding: 50px 0 100px 0;
     background-color: #1B2937;
@@ -64,6 +73,13 @@ section, footer, div {
     letter-spacing: 3px;
     margin: 0 0 30px 0;
 }
+
+@media (max-width: 550px) {
+    #footer-email h3 {
+        font-size: 1.1rem;
+        padding: 0 40px 0 40px;
+    }
+} 
 
 #footer-email #email #email-box {
     width: 300px;
@@ -87,11 +103,34 @@ section, footer, div {
     height: 60px;
     text-align: center;
     line-height: 1;
-    padding: 10px 30px;
+    padding: 25px 35px;
     margin-top: -1px;
     font-weight: 600;
     letter-spacing: .1rem;
     transition: all 0.2s linear;
+}
+
+@media (max-width: 550px) {
+    
+    #footer-email #email {
+        display: grid;
+        margin-bottom: -60px;
+        grid-template-columns: 10px 1fr 10px;
+        grid-template-rows: repeat(2, auto);
+    }
+    
+    #footer-email #email #email-box {
+        grid-column: 2/3;
+        width: auto;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    
+    #footer-email #email #email-btn {
+        grid-column: 2/3;
+        margin-top: 20px;
+        justify-self: center;
+    }
 }
 
 #footer-email #email #email-btn:hover {
@@ -100,6 +139,7 @@ section, footer, div {
 
 #footer-copyright {
     color: white;
+    background-color: #172330;
     font-size: 0.75rem;
     font-weight: 200;
     letter-spacing: 3px;
@@ -111,13 +151,24 @@ section, footer, div {
     padding: 0 0 20px 0;
 }
 
+@media(max-width: 550px) {
+    #footer-copyright .made-with-love {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+#footer-copyright .made-with-love img {
+    width: 13px;
+}
+
 #footer-copyright .copyright {
     color: rgba(255, 255, 255, 0.5);
     margin: 0 0 60px 0;
 }
 
 #footer-copyright .twitter img {
-    margin: 0 0 10px 0;
+    margin: 0 0 15px 0;
     width: 22px;
 }
 
