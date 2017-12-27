@@ -267,7 +267,7 @@ pre, code {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width 100%;
+  width: 100%;
 }
 
 #footer-links ul li {
@@ -280,7 +280,7 @@ pre, code {
   color: white;
   text-align: center;
   font-size: 0.875rem;
-  font-weight: 550;
+  font-weight: 500;
   letter-spacing: 2px;
   line-height: 30px;
   padding: 0 30px;
@@ -366,7 +366,6 @@ pre, code {
     #footer-email #email #email-btn {
         grid-column: 2/3;
         margin-top: 20px;
-        justify-self: center;
     }
 }
 
