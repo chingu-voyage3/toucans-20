@@ -17,16 +17,21 @@
       <a id="logo" href="#">
 	<img height="55px" src="images/Atomist-Logo-White-Horiz.png" alt="Atomist logo">
       </a>
-      <ul>
-	<a href="#"><li>PRODUCT</li></a>
-	<a href="#"><li>PRICING</li></a>
-	<a href="#"><li>DOCS</li></a>
-	<a href="#"><li>BLOG</li></a>
+      <div>
+      <a href="#" id="hamburger-icon">&#9776;</a>
+      <ul id="topnav">
+	<li><a href="#">PRODUCT</a></li>
+	<li><a href="#">PRICING</a></li>
+	<li><a href="#">DOCS</a></li>
+	<li><a href="#">BLOG</a></li>
+	<li class="compact-menu"><a href="#">SIGN IN</a></li>
+	<li class="compact-menu"><a href="#">GET STARTED</a></li>
       </ul>
+      </div>
       <div id="button-holder">
 	<button id="cta-button-outline">GET STARTED</button>
 	<img alt="Add to Slack" src="https://platform.slack-edge.com/img/add_to_slack.png" srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x" width="140" height="40">
-	<button>SIGN IN</button>
+	<button id="sign-in-button">SIGN IN</button>
       </div>
     </nav>
   </header>

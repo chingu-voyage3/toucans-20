@@ -61,6 +61,7 @@ nav ul a:hover {
 nav ul li {
     padding: 20px 30px;
     line-height: 80px;
+    display: inline-block;
 }
 
 #button-holder {
@@ -70,8 +71,8 @@ nav ul li {
     top: 35px;
 }
 
-nav ul li {
-    display: inline-block;
+nav ul li.compact-menu {
+    display: none;
 }
 
 #cta-button-outline {
@@ -91,6 +92,74 @@ nav ul li {
 	background-color: #5bc399;
 	color: white;
 }
+
+#sign-in-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 0.875rem;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 2.25px;
+    transition: all 0.2s linear;
+}
+
+#sign-in-button:hover {
+    color: #5bc399;
+}
+
+nav #hamburger-icon {
+    display: none;
+    font-size: 30px;
+    color: #f9f9f9;
+    padding: 15px 20px 20px 10px;
+    text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+    nav ul, nav #button-holder {
+	display: none;
+    }
+
+    nav ul.responsive, ul.responsive li, nav ul li.compact-menu {
+	display: block;
+	padding: 0;
+    }
+
+    nav ul.responsive {
+	font-size: 1.125rem;
+	font-weight: 400;
+	background-color: #5bc399;
+	padding: 0;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+    }
+
+    nav ul.responsive li:first-child {
+	margin-top: 20px;
+    }
+
+    nav ul.responsive li:last-child {
+	margin-bottom: 20px;
+    }
+
+    nav ul.responsive li {
+	line-height: inherit;
+    }
+
+    nav ul.responsive a {
+	padding: 15px 20px;
+	display: inline-block;
+	width: 100%;
+	text-decoration: none;
+    }
+
+    nav #hamburger-icon {
+	float: right;
+	display: block;
+    }
+}
+
 /* Slice 1 - navbar - END */
 
 /* slice 2 - Title and CTA styles - BEGIN */
