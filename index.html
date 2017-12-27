@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Atomist Clone</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles/main.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Atomist Clone</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans:300,400" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
   <!-- 1_ Nav+Header start -->
@@ -68,6 +70,158 @@
   <!-- 3_Features end -->
 
   <!-- 4_Carousel start -->
+  	<section id="atomist-dashboard">
+		<div class="container">
+			<div class="row">
+				<div class="twelve">
+					<img src="images/Atomist-Dashboard-Screenshot.png" alt="Atomist Dashboard Screenshot">
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="slider" id="quotes">
+		<div class="quote slick-slide">
+			<div class="content">Ensuring consistent provisioning and management of applications and infrastructure for a growing platform can be challenging. Atomist allows us to focus on what matters, writing valuable time saving automations that allow developers end to	end visibility and control.
+			</div>
+			<div class="author">– Donovan Muller, Lead Technical Partner, Barclays Africa</div>
+		</div>
+
+		<div class="quote slick-slide">
+			<div class="content">Atomist has improved our globe-spanning team's daily workflow. It gives us a single interface to both monitor the change introduced by development as well a way to manage contributions from our community.
+			</div>
+			<div class="author">– Ben Hale, Pivotal, Cloud Foundry</div>
+		</div>
+
+		<div class="quote slick-slide">
+			<div class="content">Atomist has become a critical part (and member!) of our dev team. Allowing us to efficiently manage and monitor our development process.
+			</div>
+			<div class="author">– Brian Conneen, Chief Technology Officer, Marlette Funding</div>
+		</div>
+
+		<div class="quote slick-slide">
+			<div class="content">Atomist allows us to focus on improving our products instead of custom developer tools by making automation easy with actionable information available to all team members.
+			</div>
+			<div class="author">– Tapani Moilanen, Chief Architect, Kyyti</div>
+		</div>
+
+		<div class="quote slick-slide">
+			<div class="content">We are excited to use Atomist in our team. The bridge it forms between multiple tools is an incredible asset that will allow us to speed up development and have happier developers in the meantime.
+			</div>
+			<div class="author">– Emma Wilson, nVidia</div>
+		</div>
+	</section>
+
+  <!-- 4_Carousel end -->
+
+  <!-- 5_tab_demo start -->
+  <section id="tabs">
+    <h2>Simple, powerful, open source automation API</h2>
+    <p class="subtitle">Automate your development process, increase visibility.</p>
+    <div class="tabs-buttons-container">
+      <div class="tabs-button selected" id="create-button">CREATE PROJECT</div>
+      <div class="tabs-button"id="update-button">UPDATE DEPENDENCIES</div>
+      <div class="tabs-button"id="bot-button">BOT COMMAND</div>
+    </div>
+    <div class="tab" id="create-text">
+      <pre>
+        <code>
+@CommandHandler(<span class="code-light-green">"Kotlin Spring 5 generator"</span>, <span class="code-light-green">"Generate a new spring Kotlin project"</span>)
+<span class="code-green">export class</span> <span class="code-yellow">KotlinSpring5</span> <span class="code-green">extends</span> <span class="code-yellow">JavaSeed</span>
+
+  public projectEditor(ctx: HandlerContext, params:<span class="code-green"> this</span>): ProjectEditor {
+    <span class="code-green">return</span> transformSeed;
+  }
+
+<span class="code-green">const</span> transformSeed: ProjectEditor = <span class="purple">project: Project, ctx: HandlerContext, pars: KotlinSpring5</span>) => {
+  <span class="code-green">const</span> artifact = camelize(pars.artifactId);
+  <span class="code-green">const</span> appName = artifact.charAt(<span class="blue">0</span>).toUpperCase() + artifact.substr(<span class="blue">1</span>);
+  <span class="code-green">const</span> smartArtifactId = (pars.artifactId === <span class="code-light-green">"${projectName}"</span>) ? project.name : pars.artifactId;
+  <span class="code-green">return</span> updatePom(project, smartArtifactId, pars.groupId, pars.version, pars.description)
+  .then(inferFromKotlinSource)
+  .then(<span class="purple">structure</span> => !!structure ?
+  renameAppClass(project, structure, appName)
+  .then(<span class="purple">p</span> => movePackage(p, structure.applicationPackage, pars.rootPackage, AllKotlinFiles))
+  : project);
+};
+
+<span class="code-green">function</span> <span class="code-yellow">renameAppClass</span>(<span class="purple">project: Project, structure: SpringBootProjectStructure,
+appName: string</span>): <span class="code-yellow">Promise</span> {
+  <span class="code-green">return</span> doWithFiles(project, AllKotlinFiles, <span class="purple">f</span> =>
+  f.replaceAll(structure.applicationClassStem, appName)
+  .then(f => f.path.includes(structure.applicationClassStem) ?
+  f.setPath(f.path.replace(structure.applicationClassStem, appName)) :
+  f
+  )
+  )
+
+
+  <!-- 1_ Nav+Header start -->
+  <!-- 1_ Nav+Header end -->
+
+  <!-- 2_title+CTA start -->
+  <section id="cta">
+    <div>
+      <h1>Development Automation</h1>
+      <span>Create, Ship, and continuously Improve your software</span>
+      <div class="cta-button">
+        <button>GET STARTED</button>
+      </div>
+    </div>
+  </section>
+  <!-- 2_title+CTA end -->
+  
+  <!-- 3_Features start -->
+  <section id="features">
+    <div id="row">
+      <div class="feature-column-container">
+        <div class="feature-column">
+          <img id="create" src="images/atomist-create-icon.png" alt="Create">
+          <h2>CREATE</h2>
+          <div class="feature-description">
+            Starting a new project should be a joy, not a drag. Make project creation one of your super powers.
+          </div>
+          <ul>
+            <li><span>Create everything you need for your project in one go</span></li>
+            <li><span>Turn any repo into a software factory</span></li>
+            <li><span>Configure your development flow</span></li>
+            <li><span>Get actionable notifications for your projects in chat</span></li>
+            <li><span>See project information on the Atomist web dashboard</span></li>
+          </ul>
+        </div>
+        <div class="feature-column">
+          <img id="ship" src="images/atomist-ship-icon.png" alt="Ship">
+          <h2>SHIP</h2>
+          <div class="feature-description">
+            Take the friction out of your shipping. Automate tedious tasks, get the right notifications to the right people.
+          </div>
+          <ul>
+            <li><span>Automate custom project checks and reviews</span></li>
+            <li><span>Streamline code review. Never wait for merges on all green again</span></li>
+            <li><span>Compose and evolve flexible development flows based on events, not static pipeline definitions</span></li>
+            <li><span>Release with the convenience of a button in Slack</span></li>
+          </ul>
+        </div>
+        <div class="feature-column">
+          <img id="improve" src="images/atomist-improve-icon.png" alt="Improve">
+          <h2>IMPROVE</h2>
+          <div class="feature-description">
+            Nothing says tedium like updates. Let us help. Less key mashing, and back to coding faster. Update 100 projects as easily as one.
+          </div>
+          <ul>
+            <li><span>Roll out new version of frameworks across all projects</span></li>
+            <li><span>Update dependencies across all projects</span></li>
+            <li><span>Automate code-level change across your projects, whether it’s a big renaming, or squashing a bug across your code base</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="cta-button">
+      <button>GET STARTED</button>
+    </div>
+  </section>
+  <!-- 3_Features end -->
+
+  <!-- 4_Carousel start -->
   <!-- 4_Carousel end -->
 
   <!-- 5_tab_demo start -->
@@ -111,104 +265,77 @@ appName: string</span>): <span class="code-yellow">Promise</span> {
   )
   )
 }
-        </code>
-      </pre>
-    </div>
-    <div class="tab hide" id="update-text">
-      <pre>
-        <code>
-<span class="code-green">@CommandHandler</span>(<span class="code-light-green">"Upgrade versions of Spring Boot across an org"</span>, <span class="code-light-green">"upgrade spring boot version"</span>)
-export <span class="code-green">class</span> <span class="code-yellow">SpringBootVersionUpgrade</span> <span class="code-green">extends</span> <span class="code-yellow">EditorCommandSupport</span> {
-
-    <span class="code-green">@Secret</span>(Secrets.userToken([<span class="code-light-green">"repo"</span>, <span class="code-light-green">"user"</span>]))
-    <span class="code-green">protected</span> githubToken;
-
-    <span class="code-green">@Parameter</span>({
-        displayName: <span class="code-light-green">"Desired Spring Boot version"</span>,
-        description: <span class="code-light-green">"The desired Spring Boot version across these repos"</span>,
-        pattern: /^.+$/,
-        validInput: <span class="code-light-green">"Semantic version"</span>,
-        required: <span class="code-green">false</span>,
-    })
-    <span class="code-green">public</span> desiredBootVersion: string;
-
-    <span class="code-green">public</span> <span class="code-yellow">projectEditor</span><span class="purple">()</span>: ProjectEditor {
-        <span class="code-green">return</span> setSpringBootVersionEditor(<span class="code-green">this</span>.desiredBootVersion);
-    }
-
-    <span class="code-green">public</span> <span class="code-yellow">editInfo</span><span class="purple">(p: Project)</span>: EditMode {
-        <span class="code-green">return new</span> PullRequest(<span class="code-light-green">"spring-boot-"</span> + <span class="code-green">this</span>.desiredBootVersion,
-            <span class="code-light-green">"Upgrade Spring Boot to "</span> + <span class="code-green">this</span>.desiredBootVersion);
-    }
 }
 
 export function <span class="code-yellow">setSpringBootVersionEditor</span><span class="purple">(desiredBootVersion: string)</span>: AnyProjectEditor {
-    <span class="code-green">return</span> p =>
-        doWithAtMostOneMatch(p, <span class="code-light-green">"pom.xml"</span>,
-            parentStanzaOfGrammar(SpringBootStarter), m => {
-                <span class="code-green">if</span> (m.version.value !== desiredBootVersion) {
-                    m.version.value = desiredBootVersion;
-                }
-            });
+<span class="code-green">return</span> p =>
+doWithAtMostOneMatch(p, <span class="code-light-green">"pom.xml"</span>,
+parentStanzaOfGrammar(SpringBootStarter), m => {
+<span class="code-green">if</span> (m.version.value !== desiredBootVersion) {
+m.version.value = desiredBootVersion;
 }
-        </code>
-      </pre>
-    </div>
-    <div class="tab hide" id="bot-text">
-      <pre>
-        <code>
-@CommandHandler(<span class="code-light-green">"Query Stack Overflow"</span>, <span class="code-light-green">"search so"</span>)
-@Tags(<span class="code-light-green">"stack-overflow"</span>)
-<span class="code-green">export class</span> <span class="code-yellow">SearchStackOverflow implements HandleCommand</span> {
-
-    @Parameter({ description: <span class="code-light-green">"your search query"</span>, pattern: <span class="blue">/^.*$/</span> })
-    public q: string;
-
-    public handle(ctx: HandlerContext): <span class="code-light-green">Promise</span> {
-        <span class="code-green">return</span> axios.get(<span class="code-light-green">`${apiSearchUrl}${encodeURIComponent(</span><span class="code-green">this</span>.q)}`)
-            .then(res => <span class="code-green">this</span>.handleResult(<span class="purple">res</span>, <span class="code-green">this</span>.q))
-            .then(<span class="purple">msg</span> => <span class="code-green">return</span> ctx.messageClient.respond(msg) });
-    }
+});
 }
+</code>
+</pre>
+</div>
+<div class="tab hide" id="bot-text">
+	<pre>
+		<code>
+			@CommandHandler(<span class="code-light-green">"Query Stack Overflow"</span>, <span class="code-light-green">"search so"</span>)
+			@Tags(<span class="code-light-green">"stack-overflow"</span>)
+			<span class="code-green">export class</span> <span class="code-yellow">SearchStackOverflow implements HandleCommand</span> {
 
-        </code>
-      </pre>
-    </div>
-  </section>
-  <!-- 5_tab_demo end -->
+			@Parameter({ description: <span class="code-light-green">"your search query"</span>, pattern: <span class="blue">/^.*$/</span> })
+			public q: string;
 
-  <!-- 6_footer start -->
-  <section id="footer-links">
-    <ul>
-        <li><a href="#">ABOUT US</a></li>
-        <li><a href="#">TERMS</a></li>
-        <li><a href="#">PRIVACY</a></li>
-        <li><a href="#">THE COMPOSITION</a></li>
-        <li><a href="#">CONTACT</a></li>
-    </ul>
-  </section>
-  <section id="footer-email">
-    <h3>STAY IN THE KNOW. SIGN UP NOW!</h3>
-    <form id="email">
-        <input type="email" value="" placeholder="email address" id="email-box" name="usremail">
-        <input type="submit" value="SUBSCRIBE" id="email-btn" class="button" name="subscribe">
-    </form>
-  </section>
-  <footer id="footer-copyright">
-    <div class="made-with-love">
-        <p>CREATED WITH <img src="https://atomist.com/img/heart.png"> BY ATOMIST IN SAN FRANCISCO & BEYOND</p>
-    </div>
-    <div class="copyright">
-        <p>COPYRIGHT © 2017 ATOMIST</p>
-    </div>
-    <div class="twitter">
-        <a href="#"><img src="https://atomist.com/img/twitter.png"></a>
-        <p>Follow us on Twitter</p>
-    </div>
-  </footer>
-  <!-- 6_footer end -->
+			public handle(ctx: HandlerContext): <span class="code-light-green">Promise</span> {
+			<span class="code-green">return</span> axios.get(<span class="code-light-green">`${apiSearchUrl}${encodeURIComponent(</span><span class="code-green">this</span>.q)}`)
+			.then(res => <span class="code-green">this</span>.handleResult(<span class="purple">res</span>, <span class="code-green">this</span>.q))
+			.then(<span class="purple">msg</span> => <span class="code-green">return</span> ctx.messageClient.respond(msg) });
+		}
+	}
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/main.js" ></script>
+</code>
+</pre>
+</div>
+</section>
+<!-- 5_tab_demo end -->
+
+<!-- 6_footer start -->
+<section id="footer-links">
+	<ul>
+		<li><a href="#">ABOUT US</a></li>
+		<li><a href="#">TERMS</a></li>
+		<li><a href="#">PRIVACY</a></li>
+		<li><a href="#">THE COMPOSITION</a></li>
+		<li><a href="#">CONTACT</a></li>
+	</ul>
+</section>
+<section id="footer-email">
+	<h3>STAY IN THE KNOW. SIGN UP NOW!</h3>
+	<form id="email">
+		<input type="email" value="" placeholder="email address" id="email-box" name="usremail">
+		<input type="submit" value="SUBSCRIBE" id="email-btn" class="button" name="subscribe">
+	</form>
+</section>
+<footer id="footer-copyright">
+	<div class="made-with-love">
+		<p>CREATED WITH <img src="https://atomist.com/img/heart.png"> BY ATOMIST IN SAN FRANCISCO & BEYOND</p>
+	</div>
+	<div class="copyright">
+		<p>COPYRIGHT © 2017 ATOMIST</p>
+	</div>
+	<div class="twitter">
+		<a href="#"><img src="https://atomist.com/img/twitter.png"></a>
+		<p>Follow us on Twitter</p>
+	</div>
+</footer>
+<!-- 6_footer end -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script type="text/javascript" src="js/main.js" ></script>
 </body>
 </html>
