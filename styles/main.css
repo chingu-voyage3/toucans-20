@@ -366,6 +366,7 @@ pre, code {
     #footer-email #email #email-btn {
         grid-column: 2/3;
         margin-top: 20px;
+	justify-self: center;
     }
 }
 
