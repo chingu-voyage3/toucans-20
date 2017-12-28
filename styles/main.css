@@ -3,139 +3,301 @@ I added bootstrap for the browser reset features. (remove margins padding etc). 
 */
 
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 body {
-    font-family: "Open Sans", "Helvetica", sans-serif;
-    line-height: 1.5;
-    background-color: #1b2937;
+  font-family: "Open Sans", "Helvetica", sans-serif;
+  line-height: 1.5;
+  background: url("../images/atomist-starry-night.jpg") no-repeat center top;
+  background-color: #1b2937;
+  background-size: 100% auto;
 }
 
 h1, h2 {
-   color: #fff;
-   font-family: "Lato", sans-serif;
-
+  color: #fff;
+  font-family: "Lato", sans-serif;
 }
 
 section, footer, div {
-    display: block;
+  display: block;
 }
 
-/* Slice 6 - footer styles - BEGIN */
-
-#footer-links {
-    background-color: #227F7E;
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    width: 100%;
+/* Slice 1 - navbar - BEGIN */
+nav #logo img {
+    position: absolute;
+    top: 31px;
+    left: 40px;
 }
 
-#footer-links ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width 100%;
-}
-
-#footer-links ul li {
-    margin: 0;
-    width: auto;
+nav ul {
     display: inline-block;
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding-left: 250px;
 }
 
-#footer-links ul li a {
+@media (min-width: 1400px) {
+    nav {
+	text-align: center;
+    }
+
+    nav ul {
+	padding-left: 0;
+    }
+}
+
+nav ul a {
+    transition: all 0.2s linear;
     color: white;
-    text-align: center;
-    font-size: 0.875rem;
-    font-weight: 550;
-    letter-spacing: 2px;
-    line-height: 30px;
-    padding: 0 30px;
-    text-transform: uppercase;
+}
+
+nav ul a:hover {
+    color: #5bc399;
     text-decoration: none;
 }
 
-#footer-email {
-    padding: 50px 0 100px 0;
-    background-color: #1B2937;
+nav ul li {
+    padding: 20px 30px;
+    line-height: 80px;
+    display: inline-block;
+}
+
+#button-holder {
+    display: inline-block;
+    position: absolute;
+    right: 40px;
+    top: 35px;
+}
+
+nav ul li.compact-menu {
+    display: none;
+}
+
+#cta-button-outline {
+    color: #5bc399;
+    font-size: 0.75rem;
+    height: 40px;
+    line-height: 36px;
+    padding: 0 20px;
+    background-color: transparent;
+    border: 2px solid #5bc399;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1.75px;
+}
+
+#cta-button-outline:hover {
+	background-color: #5bc399;
+	color: white;
+}
+
+#sign-in-button {
+    background: transparent;
+    border: none;
     color: white;
     font-size: 0.875rem;
-    letter-spacing: 1px;
-    text-align: center;
-}
-
-#footer-email h3 {
-    font-size: 1.5rem;
-    font-weight: 200;
-    letter-spacing: 3px;
-    margin: 0 0 30px 0;
-}
-
-#footer-email #email #email-box {
-    width: 300px;
-    background-color: #1B2937;
-    border-color: #5f7182;
-    color: #F6F6F6;
-    display: inline-block;
-    height: 60px;
-    border: 1px solid #737f8c;
-    padding: 6px 10px 6px 10px;
-    line-height: 1.15;
-    margin-bottom: 0;
-}
-
-#footer-email #email #email-btn {
-    background-color: #227F7E;
-    border: none;
-    border-radius: 0;
-    color: white;
-    display: inline-block;
-    height: 60px;
-    text-align: center;
-    line-height: 1;
-    padding: 10px 30px;
-    margin-top: -1px;
-    font-weight: 600;
-    letter-spacing: .1rem;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 2.25px;
     transition: all 0.2s linear;
 }
 
-#footer-email #email #email-btn:hover {
-    background-color: #315f68;
+#sign-in-button:hover {
+    color: #5bc399;
 }
 
-#footer-copyright {
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 200;
-    letter-spacing: 3px;
-    text-align: center;
-    padding: 50px 0 100px 0;
+nav #hamburger-icon {
+    display: none;
+    font-size: 30px;
+    color: #f9f9f9;
+    padding: 15px 20px 20px 10px;
+    text-decoration: none;
 }
 
-#footer-copyright .made-with-love {
-    padding: 0 0 20px 0;
+@media (max-width: 1024px) {
+    nav ul, nav #button-holder {
+	display: none;
+    }
+
+    nav ul.responsive, ul.responsive li, nav ul li.compact-menu {
+	display: block;
+	padding: 0;
+    }
+
+    nav ul.responsive {
+	font-size: 1.125rem;
+	font-weight: 400;
+	background-color: #5bc399;
+	padding: 0;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+    }
+
+    nav ul.responsive li:first-child {
+	margin-top: 20px;
+    }
+
+    nav ul.responsive li:last-child {
+	margin-bottom: 20px;
+    }
+
+    nav ul.responsive li {
+	line-height: inherit;
+    }
+
+    nav ul.responsive a {
+	padding: 15px 20px;
+	display: inline-block;
+	width: 100%;
+	text-decoration: none;
+    }
+
+    nav #hamburger-icon {
+	float: right;
+	display: block;
+    }
 }
 
-#footer-copyright .copyright {
-    color: rgba(255, 255, 255, 0.5);
-    margin: 0 0 60px 0;
+/* Slice 1 - navbar - END */
+
+/* slice 2 - Title and CTA styles - BEGIN */
+
+#cta {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  height: 60vh;
+  min-height: 600px;
 }
 
-#footer-copyright .twitter img {
-    margin: 0 0 10px 0;
-    width: 22px;
+#cta div {
+  width: 100%;
 }
 
-.twitter {
-    text-transform: uppercase;
-    color: white;
-    margin-bottom: 10px;
+#cta h1 {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
-/* Slice 6 - footer styles - END */
+h1+span {
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: #fff;
+}
+
+
+#cta .cta-button {
+  margin-top: 50px;
+}
+
+/* slice 2 - Title and CTA styles - END */
+
+
+
+/* Slice 3 - Features: BEGIN */
+#features {
+  background-color: #172330;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
+#features #row {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  #features #row {
+    max-width: 95%;
+  }
+}
+
+#features img#create {
+  height: 90px;
+  margin-top: 20px;
+}
+
+#features img#ship {
+  height: 110px;
+}
+
+#features img#improve {
+  height: 80px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .feature-column-container {
+    display: flex;
+    margin: -15px;
+  }
+}
+
+.feature-column-container {
+  margin-top: 190px;
+}
+
+.feature-column {
+  margin-top: -190px;
+  padding: 0 15px;
+  flex: 1;
+}
+
+.feature-description {
+  color: #f6f6f6;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.7;
+  height: 92px;
+  margin-bottom: 40px;
+}
+
+#features ul {
+  color: #5bc399;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+  padding: 0 30px 0 40px;
+  letter-spacing: 0.25px;
+}
+
+#features ul li {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+#features h2 {
+  font-size: 1.5rem;
+  margin-bottom: 60px;
+  margin-top: 25px;
+}
+
+#features span {
+  color: #aaaebd
+}
+
+.cta-button button {
+  padding: 15px 40px;
+  background-color: #5bc399;
+  border-color: transparent;
+  border-radius: 5px;
+  color: white;
+  font-family: "Lato", sans-serif;
+  letter-spacing: 1.75px;
+  margin: 30px auto 200px;
+}
+/* Slice 3 - Features: END */
+
+
+
+
 
 /* Slice 5 - 3TAB features section - BEGIN*/
 
@@ -229,90 +391,175 @@ pre, code {
 /* Slice 5 - 3TAB features section - END*/
 
 
-/* Slice 3 - Features: BEGIN */
-#features {
-    background-color: #172330;
-    text-align: center;
+
+/* Slice 6 - footer styles - BEGIN */
+
+#footer-links {
+  background-color: #227F7E;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 100%;
 }
 
-#features #row {
-    max-width: 1170px;
-    margin: 0 auto;
+#footer-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
-@media (max-width: 1200px) {
-    #features #row {
-	max-width: 95%;
+#footer-links ul li {
+  margin: 0;
+  width: auto;
+  display: inline-block;
+}
+
+#footer-links ul li a {
+  color: white;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  line-height: 30px;
+  padding: 0 30px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@media (max-width: 550px) {
+    #footer-links ul li{
+        display: block;
+        padding: 10px;
     }
 }
 
-#features img#create {
-    height: 90px;
-    margin-top: 20px;
+#footer-email {
+  padding: 50px 0 100px 0;
+  background-color: #1B2937;
+  color: white;
+  font-size: 0.875rem;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
-#features img#ship {
-    height: 110px;
+#footer-email h3 {
+  font-size: 1.5rem;
+  font-weight: 200;
+  letter-spacing: 3px;
+  margin: 0 0 30px 0;
 }
 
-#features img#improve {
-    height: 80px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-@media (min-width: 768px) {
-    .feature-column-container {
-        display: flex;
-        margin: 0 -15px;
+@media (max-width: 550px) {
+    #footer-email h3 {
+        font-size: 1.1rem;
+        padding: 0 40px 0 40px;
     }
 }
 
-.feature-column {
-    padding: 0 15px;
-    flex: 1;
+#footer-email #email #email-btn {
+  background-color: #227F7E;
+  border: none;
+  border-radius: 0;
+  color: white;
+  display: inline-block;
+  height: 60px;
+  text-align: center;
+  line-height: 1;
+  padding: 24px 35px;
+  margin-top: -1px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  transition: all 0.2s linear;
 }
 
-.feature-description {
-    color: #f6f6f6;
-    font-size: 1.125rem;
-    font-weight: 300;
-    line-height: 1.7;
-    height: 92px;
-    margin-bottom: 40px;
+#footer-email #email #email-box {
+    width: 300px;
+    background-color: #1B2937;
+    border-color: #5f7182;
+    color: #F6F6F6;
+    display: inline-block;
+    height: 60px;
+    border: 1px solid #737f8c;
+    padding: 6px 10px 6px 10px;
+    line-height: 1.15;
+    margin-bottom: 0;
 }
 
-#features ul {
-    color: #5bc399;
-    font-size: 15px;
-    font-weight: 300;
-    text-align: left;
-    padding: 0 30px 0 40px;
-    letter-spacing: 0.25px;
+@media (max-width: 550px) {
+    
+    #footer-email #email {
+        display: grid;
+        margin-bottom: -60px;
+        grid-template-columns: 10px 1fr 10px;
+        grid-template-rows: repeat(2, auto);
+    }
+    
+    #footer-email #email #email-box {
+        grid-column: 2/3;
+        width: auto;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    
+    #footer-email #email #email-btn {
+        grid-column: 2/3;
+        margin-top: 20px;
+	justify-self: center;
+    }
 }
 
-#features ul li {
-    line-height: 1.6;
-    margin-bottom: 15px;
+#footer-email #email #email-btn:hover {
+    background-color: #315f68;
 }
 
-#features h2 {
-    font-size: 1.5rem;
-    margin-bottom: 60px;
-    margin-top: 25px;
-}
-
-#features span {
-    color: #aaaebd
-}
-
-#cta-button button{
-    padding: 15px 40px;
-    background-color: #5bc399;
-    border-color: transparent;
-    border-radius: 5px;
+#footer-copyright {
     color: white;
-    font-family: "Lato", sans-serif;
-    letter-spacing: 1.75px;
+    background-color: #172330;
+    font-size: 0.75rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+    text-align: center;
+    padding: 50px 0 100px 0;
 }
-/* Slice 3 - Features: END */
+
+#footer-copyright {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 200;
+  letter-spacing: 3px;
+  text-align: center;
+  padding: 50px 0 100px 0;
+}
+
+#footer-copyright .made-with-love {
+  padding: 0 0 20px 0;
+}
+
+@media(max-width: 550px) {
+    #footer-copyright .made-with-love {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+#footer-copyright .made-with-love img {
+    width: 13px;
+}
+
+#footer-copyright .twitter img {
+    margin: 0 0 15px 0;
+    width: 22px;
+}
+
+#footer-copyright .copyright {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 60px 0;
+}
+
+.twitter {
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 10px;
+}
+/* Slice 6 - footer styles - END */
