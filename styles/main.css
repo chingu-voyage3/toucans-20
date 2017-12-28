@@ -23,6 +23,145 @@ section, footer, div {
   display: block;
 }
 
+/* Slice 1 - navbar - BEGIN */
+nav #logo img {
+    position: absolute;
+    top: 31px;
+    left: 40px;
+}
+
+nav ul {
+    display: inline-block;
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding-left: 250px;
+}
+
+@media (min-width: 1400px) {
+    nav {
+	text-align: center;
+    }
+
+    nav ul {
+	padding-left: 0;
+    }
+}
+
+nav ul a {
+    transition: all 0.2s linear;
+    color: white;
+}
+
+nav ul a:hover {
+    color: #5bc399;
+    text-decoration: none;
+}
+
+nav ul li {
+    padding: 20px 30px;
+    line-height: 80px;
+    display: inline-block;
+}
+
+#button-holder {
+    display: inline-block;
+    position: absolute;
+    right: 40px;
+    top: 35px;
+}
+
+nav ul li.compact-menu {
+    display: none;
+}
+
+#cta-button-outline {
+    color: #5bc399;
+    font-size: 0.75rem;
+    height: 40px;
+    line-height: 36px;
+    padding: 0 20px;
+    background-color: transparent;
+    border: 2px solid #5bc399;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1.75px;
+}
+
+#cta-button-outline:hover {
+	background-color: #5bc399;
+	color: white;
+}
+
+#sign-in-button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 0.875rem;
+    font-family: "Lato", sans-serif;
+    letter-spacing: 2.25px;
+    transition: all 0.2s linear;
+}
+
+#sign-in-button:hover {
+    color: #5bc399;
+}
+
+nav #hamburger-icon {
+    display: none;
+    font-size: 30px;
+    color: #f9f9f9;
+    padding: 15px 20px 20px 10px;
+    text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+    nav ul, nav #button-holder {
+	display: none;
+    }
+
+    nav ul.responsive, ul.responsive li, nav ul li.compact-menu {
+	display: block;
+	padding: 0;
+    }
+
+    nav ul.responsive {
+	font-size: 1.125rem;
+	font-weight: 400;
+	background-color: #5bc399;
+	padding: 0;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+    }
+
+    nav ul.responsive li:first-child {
+	margin-top: 20px;
+    }
+
+    nav ul.responsive li:last-child {
+	margin-bottom: 20px;
+    }
+
+    nav ul.responsive li {
+	line-height: inherit;
+    }
+
+    nav ul.responsive a {
+	padding: 15px 20px;
+	display: inline-block;
+	width: 100%;
+	text-decoration: none;
+    }
+
+    nav #hamburger-icon {
+	float: right;
+	display: block;
+    }
+}
+
+/* Slice 1 - navbar - END */
 
 /* slice 2 - Title and CTA styles - BEGIN */
 
