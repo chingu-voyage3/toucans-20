@@ -3,12 +3,6 @@ $( document ).ready(function() {
     console.log("hello from js file");
 
 
-// 1_navbar script start
-    $('#hamburger-icon').on('click', function() {
-	$('#topnav').toggleClass('responsive');
-    });
-// 1_navbar script end
-
 
 // 5_tabs script start
 // add a click event listener on all divs with the class button
