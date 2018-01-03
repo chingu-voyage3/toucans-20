@@ -56,9 +56,15 @@ nav ul li {
 nav ul a {
     transition: all 0.2s linear;
     color: white;
-    padding: 20px 30px;
+    padding: 20px 10px;
     line-height: 80px;
     display: inline-block;
+}
+
+@media (min-width: 1200px) {
+    nav ul a {
+	padding: 20px 30px;
+    }
 }
 
 nav ul a:hover {
