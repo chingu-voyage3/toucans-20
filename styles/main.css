@@ -49,20 +49,21 @@ nav ul {
     }
 }
 
+nav ul li {
+    display: inline-block;
+}
+
 nav ul a {
     transition: all 0.2s linear;
     color: white;
+    padding: 20px 30px;
+    line-height: 80px;
+    display: inline-block;
 }
 
 nav ul a:hover {
     color: #5bc399;
     text-decoration: none;
-}
-
-nav ul li {
-    padding: 20px 30px;
-    line-height: 80px;
-    display: inline-block;
 }
 
 #button-holder {
