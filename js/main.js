@@ -27,33 +27,3 @@ $('.tabs-button').on('click', function(){
 //5_tabs script end
 
 });
-
-$(document).ready(function(){
-  	$('.slider').not('.slick-initialized').slick({
-  		autoplay: true
-  	});
-  });
-
-  function createSlick(){  
-
-  	$(".slider").not('.slick-initialized').slick({
-  		autoplay: true,
-  		dots: true,
-  		responsive: [{ 
-  			breakpoint: 500,
-  			settings: {
-  				dots: true,
-  				arrows: true,
-  				infinite: false,
-  				slidesToShow: 2,
-  				slidesToScroll: 2
-  			} 
-  		}]
-  	});	
-
-  }
-
-  createSlick();
-
-//Now it will not throw error, even if called multiple times.
-$(window).on( 'resize', createSlick );
