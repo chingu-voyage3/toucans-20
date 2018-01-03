@@ -124,6 +124,11 @@ nav #hamburger-icon {
 }
 
 @media (max-width: 1024px) {
+    nav ul {
+	position: absolute;
+	top: 90px;
+    }
+
     nav ul, nav #button-holder {
 	display: none;
     }
