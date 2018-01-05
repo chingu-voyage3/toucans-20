@@ -238,14 +238,17 @@ h1+span {
     display: flex;
     margin: -15px;
   }
-}
 
-.feature-column-container {
-  margin-top: 190px;
+  .feature-column-container {
+      margin-top: 190px;
+  }
+
+  .feature-column {
+      margin-top: -190px;
+  }
 }
 
 .feature-column {
-  margin-top: -190px;
   padding: 0 15px;
   flex: 1;
 }
@@ -266,6 +269,12 @@ h1+span {
   text-align: left;
   padding: 0 30px 0 40px;
   letter-spacing: 0.25px;
+}
+
+@media (max-width: 1024px) {
+    #features ul {
+	padding-bottom: 40px;
+    }
 }
 
 #features ul li {
