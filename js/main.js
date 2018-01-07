@@ -23,5 +23,32 @@ $('.tabs-button').on('click', function(){
 });
 //5_tabs script end
 
+//4_carousel script begin
+
+function createSlick(){  
+
+    $(".slider").not('.slick-initialized').slick({
+      autoplay: true,
+      dots: true,
+      responsive: [{ 
+        breakpoint: 500,
+        settings: {
+          dots: true,
+          arrows: true,
+          infinite: false,
+          slidesToShow: 2,
+          slidesToScroll: 2
+        } 
+      }]
+    }); 
+
+  }
+
+  createSlick();
+
+//Now it will not throw error, even if called multiple times.
+$(window).on( 'resize', createSlick );
+
+//4_carousel script end
 
 });
