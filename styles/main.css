@@ -30,6 +30,10 @@ nav #logo img {
     left: 40px;
 }
 
+nav {
+    min-height: 104px;
+}
+
 nav ul {
     display: inline-block;
     font-family: "Lato", sans-serif;
