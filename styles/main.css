@@ -416,7 +416,119 @@ pre, code {
 
 /* Slice 5 - 3TAB features section - END*/
 
+/* Slice 4 - Carousel: BEGIN */
 
+.slider {
+  width: auto;
+  margin: 30px 50px 50px;
+}
+
+.slick-slide {
+  background: blue;
+  color: white;
+  padding: 40px 0;
+  font-size: 30px;
+  font-family: "Arial", "Helvetica";
+  text-align: center;
+  width: 890px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: white;
+  opacity: 0.75;
+}
+
+.slick-dots {
+  bottom: -30px;
+  color: white;
+  opacity: 0.75;
+}
+
+.slick-slide:nth-child(odd) {
+  background: red;
+}
+
+.author {
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #AAAEBD;
+}
+
+#featured-image {
+  margin: -200px auto;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+}
+
+body#atomist-dashboard img {
+  width: 150%;
+  max-width: none;
+  margin-left: -25%;
+}
+
+@media (min-width: 1024px) {
+  body#atomist-dashboard img {
+    margin-left: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  body#atomist-dashboard {
+    margin-top: -110px;
+  }
+}
+body #quotes {
+  margin-top: -40px;
+  position: relative;
+  text-align: center;
+  z-index: 5;
+}
+
+@media (min-width: 1024px) {
+  body #quotes {
+    margin-top: -140px;
+  }
+}
+body #quotes .quotes-holder {
+  padding: 0 30px 60px 30px;
+}
+
+body #quotes .quotes-holder .quote .content {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #E8E8E8;
+  letter-spacing: .25px;
+  line-height: 1.875rem;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 1024px) {
+  body #quotes .quotes-holder .quote .content {
+    font-size: 1.3125rem;
+    line-height: 2rem;
+  }
+}
+body #quotes .quotes-holder .quote .author {
+  font-family: "brandon-grotesque", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1024px) {
+  body #quotes .quotes-holder .quote .author {
+    font-size: 1rem;
+  }
+}
+/* Slice 4 - Carousel: END */
 
 /* Slice 6 - footer styles - BEGIN */
 
@@ -513,21 +625,21 @@ pre, code {
 }
 
 @media (max-width: 550px) {
-    
+
     #footer-email #email {
         display: grid;
         margin-bottom: -60px;
         grid-template-columns: 10px 1fr 10px;
         grid-template-rows: repeat(2, auto);
     }
-    
+
     #footer-email #email #email-box {
         grid-column: 2/3;
         width: auto;
         margin-left: 30px;
         margin-right: 30px;
     }
-    
+
     #footer-email #email #email-btn {
         grid-column: 2/3;
         margin-top: 20px;
