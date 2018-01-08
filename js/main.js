@@ -13,7 +13,7 @@ $( document ).ready(function() {
 function createSlick(){
 
     $(".slider").not('.slick-initialized').slick({
-      autoplay: false,
+      autoplay: true,
       dots: true,
       responsive: [{
         breakpoint: 500,
