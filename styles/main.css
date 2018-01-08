@@ -30,6 +30,10 @@ nav #logo img {
     left: 40px;
 }
 
+nav {
+    min-height: 104px;
+}
+
 nav ul {
     display: inline-block;
     font-family: "Lato", sans-serif;
@@ -49,20 +53,27 @@ nav ul {
     }
 }
 
+nav ul li {
+    display: inline-block;
+}
+
 nav ul a {
     transition: all 0.2s linear;
     color: white;
+    padding: 20px 10px;
+    line-height: 80px;
+    display: inline-block;
+}
+
+@media (min-width: 1200px) {
+    nav ul a {
+	padding: 20px 30px;
+    }
 }
 
 nav ul a:hover {
     color: #5bc399;
     text-decoration: none;
-}
-
-nav ul li {
-    padding: 20px 30px;
-    line-height: 80px;
-    display: inline-block;
 }
 
 #button-holder {
@@ -117,6 +128,11 @@ nav #hamburger-icon {
 }
 
 @media (max-width: 1024px) {
+    nav ul {
+	position: absolute;
+	top: 90px;
+    }
+
     nav ul, nav #button-holder {
 	display: none;
     }
@@ -153,6 +169,7 @@ nav #hamburger-icon {
 	display: inline-block;
 	width: 100%;
 	text-decoration: none;
+	line-height: 30px;
     }
 
     nav #hamburger-icon {
