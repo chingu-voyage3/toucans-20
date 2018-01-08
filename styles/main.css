@@ -412,12 +412,10 @@ h1+span {
   color: #fff;
 }
 
-
 .slick-dots li.slick-active button::before {
   opacity:0.75;
   color:#fff;
 }
-
 
 .author {
   font-family: "Lato", sans-serif;
