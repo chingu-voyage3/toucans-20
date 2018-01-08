@@ -247,7 +247,7 @@ h1+span {
 .feature-column {
   margin-top: -190px;
   padding: 0 15px;
-  flex: 1;
+  flex: 1; 
 }
 
 .feature-description {
@@ -266,6 +266,14 @@ h1+span {
   text-align: left;
   padding: 0 30px 0 40px;
   letter-spacing: 0.25px;
+
+}
+
+@media (max-width: 1024px) {
+    #features ul {
+	padding-bottom: 40px;
+    }
+
 }
 
 #features ul li {
