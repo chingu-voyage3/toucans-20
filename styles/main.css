@@ -131,40 +131,49 @@ nav #hamburger-icon {
     nav ul {
 	position: absolute;
 	top: 90px;
+	padding: 0;
+	font-size: 1.125rem;
+	font-weight: 400;
+	background-color: #5bc399;
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	height: 0;
+	transition: height 0.2s;
+	overflow: hidden;
     }
 
-    nav ul, nav #button-holder {
-	display: none;
+    nav ul.responsive {
+	height: 25rem;
     }
 
-    nav ul.responsive, ul.responsive li, nav ul li.compact-menu {
+    nav ul li {
 	display: block;
 	padding: 0;
     }
 
-    nav ul.responsive {
-	font-size: 1.125rem;
-	font-weight: 400;
-	background-color: #5bc399;
-	padding: 0;
-	display: inline-block;
-	width: 100%;
-	text-align: center;
+    nav #button-holder {
+	display: none;
     }
 
-    nav ul.responsive li:first-child {
+    nav ul li.compact-menu {
+	display: block;
+	padding: 0;
+    }
+
+    nav ul li:first-child {
 	margin-top: 20px;
     }
 
-    nav ul.responsive li:last-child {
+    nav ul li:last-child {
 	margin-bottom: 20px;
     }
 
-    nav ul.responsive li {
+    nav ul li {
 	line-height: inherit;
     }
 
-    nav ul.responsive a {
+    nav ul a {
 	padding: 15px 20px;
 	display: inline-block;
 	width: 100%;
